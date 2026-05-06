@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dice Bytes</title>
+ <link href="styles/style.css" rel="stylesheet" type="text/css" media="all">
+  <link rel="icon" type="image/x-icon" href="graphics/cordy.ico">
+</head>
+<body>
+
+<div id="titleScreen" class="menu" style="display:block;">
+    <h1>Dice Bytes</h1>
+    <button id="titleStartBtn">Start Game</button>
+</div>
+
+<!-- Main Menu -->
+<div id="mainMenu" class="menu" style="display:none;">
+    <h1><i>Dice Bytes</i></h1>
+    <button id="startBtn">Start Game</button>
+	<button id="instructionsBtn">How to Play</button>
+	<button id="creditsBtn">Credits</button>
+
+	<div style="margin-top:15px;">
+		<label style="color:white;">Music Volume</label><br>
+		<input type="range" class="volumeSlider" min="0" max="1" step="0.01" value="0.5">
+	</div>
+</div>
+
+<!-- Instructions Screen -->
+<div id="instructionsScreen" class="menu" style="display:none;">
+    <h1>Instructions</h1>
+    <div style="max-width:500px; margin:auto;">
+        <strong>Story:</strong><br>
+        The <strong><em>Dice Bytes</em></strong> are malware invaders that slice and dice computer systems. 
+        Unfortunately, they have managed to breach your computer. 
+        In a quick effort, the <strong>Shroomer Core Processor</strong> dispatches an anti-virus program to combat them wave after wave. 
+		That anti-virus is you!<br><br>
+
+        <strong>Controls:</strong><br>
+        Move: WASD Keys<br>
+        Shoot: Left Click<br>
+        Pause: ESC<br>
+		Fullscreen Toggle: F11<br><br>
+		
+		<strong>Gameplay:</strong><br>
+		<table>
+		  <tr>
+			<th>Enemy</th>
+			<th>Bullet</th>
+			<th>Melee</th>
+		  </tr>
+		  <tr>
+			<td><img src="graphics/enemy1.png"></td>
+			<td>5 Points</td>
+			<td>10 Points</td>
+		  </tr>
+		  <tr>
+			<td><img src="graphics/enemy2r.png"></td>
+			<td>10 Points</td>
+			<td>15 Points</td>
+		  </tr>
+		  <tr>
+			<td><img src="graphics/enemy3.png"></td>
+			<td>30 Points</td>
+			<td>N/A</td>
+		  </tr>
+
+		  <tr>
+			<td>???</td>
+			<td>500 Points</td>
+			<td>N/A</td>
+		  </tr>
+		  <tr>
+			<td colspan="3"><br>500 points = 1 Wave</td>
+		  </tr>
+		  <tr>
+			<td colspan="3"><br>Regen health after 30 secs of no damage</td>
+		  </tr>
+		</table>
+    </div>
+	<br><br>
+    <button id="backFromInstructions">Back</button>
+</div>
+
+<!-- Credits Screen -->
+<div id="creditsScreen" class="menu" style="display:none;">
+    <h1>Credits</h1>
+    <p>
+		Game and Sprites are made by LevelChris27<br><br>
+		
+		<strong>Audio from:</strong><br>
+		Mixkit.co<br>
+		Pixabay.com<br>
+		Gamemaker 8.1 Resources<br><br>
+	
+        <strong>Tracks Used:</strong><br>
+        Can't Get You Off My Mind - Michael Ramir C<br>
+        A Game - Michael Ramir C<br>
+        Space Game - Francisco Alvear<br>
+        Almost Game Time - Ahjay Stelino
+    </p>
+	<br>
+    <button id="backFromCredits">Back</button>
+</div>
+
+<!-- Pause Menu -->
+<div id="pauseMenu" class="menu" style="display:none;">
+    <h2>Paused</h2>
+    <button id="resumeBtn">Resume</button>
+    <button id="backToMenuBtn">Back to Menu</button>
+	<div style="margin-top:15px;">
+		<label style="color:white;">Music Volume</label><br>
+		<input type="range" class="volumeSlider" min="0" max="1" step="0.01" value="0.5">
+	</div>
+</div>
+
+<!-- Game Over Screen -->
+<div id="gameOverScreen" class="game-over" style="display:none;">
+    <h2>Game Over</h2>
+    <p id="finalScore"></p>
+    <p id="highScoreText"></p>
+    <button id="playAgainBtn">Play Again</button>
+    <button id="backToMenuBtn2">Back to Menu</button>
+	<div style="margin-top:15px;">
+		<label style="color:white;">Music Volume</label><br>
+		<input type="range" class="volumeSlider" min="0" max="1" step="0.01" value="0.5">
+	</div>
+</div>
+
+<canvas id="gameCanvas" width="800" height="600" style="display:none;"></canvas>
+<audio id="bgMusic0" src="audio/music0.mp3" loop></audio>
+<audio id="bgMusic1" src="audio/music1.mp3"></audio>
+<audio id="bgMusic2" src="audio/music2.mp3"></audio>
+<audio id="bgMusic3" src="audio/music3.mp3"></audio>
+
+<div id="watermark">Version 1.0<br>LC27 Productions 2026</div>
+
+<script src="src/game.js"></script>
+</body>
+</html>
